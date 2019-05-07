@@ -1,0 +1,7 @@
+Hyper-V/
+Volume/git/
+Volume/grafana/log/
+Volume/mysql/data/
+Volume/prometheus/data/
+Volume/registry/
+Volume/zookeeper/log/
