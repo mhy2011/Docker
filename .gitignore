@@ -1,6 +1,9 @@
 Hyper-V/
 Volume/git/
+
 Volume/grafana/log/
+Volume/grafana/data/png/
+
 Volume/mysql/data/
 Volume/prometheus/data/
 Volume/registry/
