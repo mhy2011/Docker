@@ -18,33 +18,32 @@ rule_files:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus'
+  #- job_name: 'prometheus'
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['localhost:9090']
+  #  scrape_interval: 5s
+  #  static_configs:
+  #    - targets: ['localhost:9090']
 
-  - job_name: 'node'
-    scrape_interval: 8s
-    static_configs:
-      - targets: ['node-exporter:9100', 'node-exporter2:9100']
+  #- job_name: 'node'
+  #  scrape_interval: 8s
+  #  static_configs:
+  #    - targets: ['node-exporter:9100', 'node-exporter2:9100']
 
-  - job_name: 'spring-actuator'
+  - job_name: 'zhibo'
     metrics_path: '/actuator/prometheus'
-    scrape_interval: 8s
-    static_configs:
-      - targets: ['172.16.202.223:8080']
-
-  - job_name: 'yike'
-    metrics_path: '/actuator/prometheus'
-    scrape_interval: 8s
+    # controls how often Prometheus will scrape targets
+    scrape_interval: 10s
+    # controls how often Prometheus will evaluate rules. Prometheus uses rules to create new time series and to generate alerts
+    # evaluation_interval: 10s
     static_configs:
       - targets: ['192.168.241.52:8080']
 
-#  - job_name: 'mysqld'
-#    static_configs:
-#      - targets: ['127.0.0.1:9104']
-#  - job_name: 'memcached'
-#    static_configs:
-#      - targets: ['127.0.0.1:9150']
+  - job_name: 'achilles'
+    metrics_path: '/metrics'
+    # controls how often Prometheus will scrape targets
+    scrape_interval: 10s
+    # controls how often Prometheus will evaluate rules. Prometheus uses rules to create new time series and to generate alerts
+    # evaluation_interval: 10s
+    static_configs:
+      - targets: ['192.168.241.157:8080']
